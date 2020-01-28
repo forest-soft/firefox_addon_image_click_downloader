@@ -1,6 +1,51 @@
 {
-  "extensionDescription": {
-    "message": "画像をダブルクリックで保存できるようになります。",
-    "description": "Description of the extension."
-  }
+	"extensionDescription": {
+		"message": "画像をダブルクリックで保存できるようになります。",
+		"description": "Description of the extension."
+	},
+	"option_label_basic_setting_title": {
+		"message": "基本設定"
+	},
+	"option_label_save_dir_name": {
+		"message": "保存ディレクトリ名"
+	},
+	"option_label_save_dir_name_remark": {
+		"message": "保存できるのはダウンロードディレクトリ配下となります。\nダウンロードディレクトリ以外に保存したい場合は\nダウンロードディレクトリ内にジャンクションを作成してください。\n例：mklink /J C:\\Users\\{user_name}\\Downloads\\from C:\\to"
+	},
+	"option_label_download_start_popup_setting_title": {
+		"message": "ダウンロード開始ポップアップ設定"
+	},
+	"option_label_download_popup_show": {
+		"message": "ポップアップ表示"
+	},
+	"option_label_yes": {
+		"message": "する"
+	},
+	"option_label_no": {
+		"message": "しない"
+	},
+	"option_label_download_popup_show_thumbnail": {
+		"message": "保存画像のサムネイル表示"
+	},
+	"option_label_download_popup_show_thumbnail_remark": {
+		"message": "※ポップアップの挙動が多少不安定になります。"
+	},
+	"option_label_download_complete_popup_setting_title": {
+		"message": "ダウンロード完了ポップアップ設定"
+	},
+	"option_label_save_button": {
+		"message": "保存する"
+	},
+	"option_label_save_complete": {
+		"message": "保存しました！"
+	},
+	"option_label_save_error": {
+		"message": "保存できませんでした"
+	},
+	"popup_download_start": {
+		"message": "ダウンロード開始"
+	},
+	"popup_download_complete": {
+		"message": "ダウンロード完了！"
+	}
 }

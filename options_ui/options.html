@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+	<form>
+		<h1><span class="option_label_basic_setting_title">@基本設定@</span></h1>
+		<span class="option_label_save_dir_name">@保存ディレクトリ名@</span>：<input type="text" id="save_dir" value=""><br>
+		<pre class="option_label_save_dir_name_remark">@説明文@</pre>
+		
+		<br>
+		
+		<h1><span class="option_label_download_start_popup_setting_title">@ダウンロード開始ポップアップ設定@</span></h1>
+		<span class="option_label_download_popup_show">@ポップアップ表示@</span>：
+		<label><input type="radio" name="is_show_popup_by_start" value="yes"><span class="option_label_yes">@する@</span></label>
+		<label><input type="radio" name="is_show_popup_by_start" value="no"><span class="option_label_no">@しない@</span></label><br>
+		
+		<br>
+		
+		<span class="option_label_download_popup_show_thumbnail">@保存画像のサムネイル表示@</span>：
+		<label><input type="radio" name="is_show_thumbnail_by_start" value="yes"><span class="option_label_yes">@する@</span></label>
+		<label><input type="radio" name="is_show_thumbnail_by_start" value="no"><span class="option_label_no">@しない@</span></label><br>
+		<pre class="option_label_download_popup_show_thumbnail_remark">@説明文@</pre>
+		
+		<br>
+		
+		<h1><span class="option_label_download_complete_popup_setting_title">@ダウンロード完了ポップアップ設定@</span></h1>
+		<span class="option_label_download_popup_show">@ポップアップ表示@</span>：
+		<label><input type="radio" name="is_show_popup_by_complete" value="yes"><span class="option_label_yes">@する@</span></label>
+		<label><input type="radio" name="is_show_popup_by_complete" value="no"><span class="option_label_no">@しない@</span></label><br>
+		
+		<br>
+		
+		<span class="option_label_download_popup_show_thumbnail">@保存画像のサムネイル表示@</span>：
+		<label><input type="radio" name="is_show_thumbnail_by_complete" value="yes"><span class="option_label_yes">@する@</span></label>
+		<label><input type="radio" name="is_show_thumbnail_by_complete" value="no"><span class="option_label_no">@しない@</span></label><br>
+		<pre class="option_label_download_popup_show_thumbnail_remark">@説明文@</pre>
+		
+		<br>
+		
+		<button type="submit"><span class="option_label_save_button">@保存する@</span></button>
+	</form>
+	
+	<script src="options.js"></script>
+	</body>
+</html>
