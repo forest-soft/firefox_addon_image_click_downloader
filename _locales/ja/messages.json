@@ -1,6 +1,6 @@
 {
 	"extensionDescription": {
-		"message": "画像をダブルクリックで保存できるようになります。",
+		"message": "画像をダブルクリックして保存できるようになります。\n既に同じファイル名のファイルがある場合は保存ダイアログが開くので、任意の名前を付けて保存してください。",
 		"description": "Description of the extension."
 	},
 	"option_label_basic_setting_title": {
@@ -10,7 +10,7 @@
 		"message": "保存ディレクトリ名"
 	},
 	"option_label_save_dir_name_remark": {
-		"message": "保存できるのはダウンロードディレクトリ配下となります。\nダウンロードディレクトリ以外に保存したい場合は\nダウンロードディレクトリ内にジャンクションを作成してください。\n例：mklink /J C:\\Users\\{user_name}\\Downloads\\from C:\\to"
+		"message": "保存できるのはFirefoxのオプション画面の\n「ファイルとプログラム > ダウンロード > 次のフォルダーに保存する」で選択したディレクトリ配下となります。\n別の場所に保存したい場合はFirefoxのオプションで指定したディレクトリ内にジャンクションを作成してください。\n例：mklink /J C:\\Users\\{user_name}\\Downloads\\from C:\\to"
 	},
 	"option_label_download_start_popup_setting_title": {
 		"message": "ダウンロード開始ポップアップ設定"

@@ -1,6 +1,6 @@
 {
 	"extensionDescription": {
-		"message": "Images can be saved by double-clicking.",
+		"message": "Double-click the image to save it. \nIf there is already a file with the same file name, the save dialog will open. Save the file with any name.",
 		"description": "Description of the extension."
 	},
 	"option_label_basic_setting_title": {
@@ -10,7 +10,7 @@
 		"message": "Save directory name"
 	},
 	"option_label_save_dir_name_remark": {
-		"message": "What can be saved is under the download directory. \n If you want to save to a directory other than the download directory, please create a junction in the\n download directory. \n Example : mklink /J C:\\Users\\{user_name}\\Downloads\\from C:\\to"
+		"message": "You can save in the Firefox options screen\nIt will be under the directory selected in \"Files and Applications> Downloads> Save files to\".\nIf you want to save it to another location, \ncreate a junction in the directory specified in Firefox options. \nExample : mklink /J C:\\Users\\{user_name}\\Downloads\\from C:\\to"
 	},
 	"option_label_download_start_popup_setting_title": {
 		"message": "Download start popup setting"
