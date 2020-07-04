@@ -108,41 +108,52 @@ function download(url) {
 			filename = filename.split(":")[0];
 		}
 		
+		content_type_ext = "";
+		if (content_type != null && content_type.length != 0) {
+			var content_type_list = {
+				"image/jpeg": "jpg",
+				"image/png": "png",
+				"image/gif": "gif",
+				"image/webp": "webp",
+				"image/bmp": "bmp"
+			};
+			
+			if (typeof content_type_list[content_type] != "undefined") {
+				content_type_ext = content_type_list[content_type];
+			}
+		}
+		
 		var find_ext = true;
-		if (filename.indexOf(".") == -1) {
+		if (filename.indexOf(".") != -1) {
+			if (content_type_ext.length != 0) {
+				// ファイル名に拡張子がついているが、Content-Typeと違うものであれば置き換える。
+				filename = filename.split(".").slice(0, -1).join(".") + "." + content_type_ext;
+			}
+		} else {
 			find_ext = false;
 			
-			if (content_type != null && content_type.length != 0) {
-				var content_type_list = {
-					"image/jpeg": "jpg",
-					"image/jpeg": "jpg",
-					"image/png": "png",
-					"image/gif": "gif",
-					"image/webp": "webp",
-					"image/bmp": "bmp"
-				};
-				
-				if (typeof content_type_list[content_type] != "undefined") {
-					filename += "." + content_type_list[content_type];
-					find_ext = true;
-				}
+			if (content_type_ext.length != 0) {
+				filename += "." + content_type_ext;
+				find_ext = true;
 			}
 			
 			if (!find_ext) {
 				// Twitterの「https://pbs.twimg.com/media/xxx?format=jpg」というURLの場合用の拡張子特定処理
 				// ※基本的にはヘッダーから特定するが、何らかの理由でヘッダー情報が取れなかった場合はURLから特定する。
-				var request = {};
-				var param_list = url.split("?")[1].split("#")[0].split("&");
-				for(var i = 0; i < param_list.length; i++) {
-					var param_parts = param_list[i].split("=");
-					request[decodeURIComponent(param_parts[0])] = decodeURIComponent(param_parts[1]);
-				}
-				if (typeof request["format"] !== "undefined") {
-					var format = request["format"].toLowerCase();
-					var ext_list = ["jpg", "jpeg", "png", "gif", "webp", "bmp"];
-					if (ext_list.indexOf(format) != -1) {
-						filename += "." + request["format"];
-						find_ext = true;
+				if (url.indexOf("?") != -1) {
+					var request = {};
+					var param_list = url.split("?")[1].split("#")[0].split("&");
+					for(var i = 0; i < param_list.length; i++) {
+						var param_parts = param_list[i].split("=");
+						request[decodeURIComponent(param_parts[0])] = decodeURIComponent(param_parts[1]);
+					}
+					if (typeof request["format"] !== "undefined") {
+						var format = request["format"].toLowerCase();
+						var ext_list = ["jpg", "jpeg", "png", "gif", "webp", "bmp"];
+						if (ext_list.indexOf(format) != -1) {
+							filename += "." + request["format"];
+							find_ext = true;
+						}
 					}
 				}
 			}
