@@ -35,5 +35,5 @@
 		"page": "options_ui/options.html"
 	},
 	
-	"permissions": ["downloads", "notifications", "storage"]
+	"permissions": ["downloads", "notifications", "storage", "<all_urls>"]
 }
