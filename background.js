@@ -108,6 +108,7 @@ function download(url) {
 			filename = filename.split(":")[0];
 		}
 		
+		var ext_list = ["jpg", "jpeg", "png", "gif", "webp", "bmp", "ico"];
 		content_type_ext = "";
 		if (content_type != null && content_type.length != 0) {
 			var content_type_list = {
@@ -115,9 +116,10 @@ function download(url) {
 				"image/png": "png",
 				"image/gif": "gif",
 				"image/webp": "webp",
-				"image/bmp": "bmp"
+				"image/bmp": "bmp",
+				"image/vnd.microsoft.icon": "ico",
+				"image/x-icon": "ico"
 			};
-			
 			if (typeof content_type_list[content_type] != "undefined") {
 				content_type_ext = content_type_list[content_type];
 			}
@@ -125,8 +127,8 @@ function download(url) {
 		
 		var find_ext = true;
 		if (filename.indexOf(".") != -1) {
-			if (content_type_ext.length != 0) {
-				// ファイル名に拡張子がついているが、Content-Typeと違うものであれば置き換える。
+			if (content_type_ext.length != 0 && filename.split(".").pop().toLowerCase() != content_type_ext) {
+				// ファイル名に拡張子がついているが、Content-Typeと違うものであればContent-Typeの内容を優先させる。
 				filename = filename.split(".").slice(0, -1).join(".") + "." + content_type_ext;
 			}
 		} else {
@@ -149,7 +151,7 @@ function download(url) {
 					}
 					if (typeof request["format"] !== "undefined") {
 						var format = request["format"].toLowerCase();
-						var ext_list = ["jpg", "jpeg", "png", "gif", "webp", "bmp"];
+						
 						if (ext_list.indexOf(format) != -1) {
 							filename += "." + request["format"];
 							find_ext = true;
@@ -157,6 +159,22 @@ function download(url) {
 					}
 				}
 			}
+		}
+		
+		if (find_ext) {
+			// 想定している拡張子以外であれば拡張子部分を除外する。
+			var ext = filename.split(".").pop().toLowerCase();
+			if (ext_list.indexOf(ext) == -1) {
+				find_ext = false;
+				filename = filename.split(".").slice(0, -1).join(".");
+			}
+		}
+		
+		if (find_ext) {
+			// 拡張子を小文字にする。
+			var filename_parts = filename.split(".");
+			filename_parts[filename_parts.length - 1] = filename_parts[filename_parts.length - 1].toLowerCase();
+			filename = filename_parts.join(".");
 		}
 		
 		var save_path = save_dir + filename;
