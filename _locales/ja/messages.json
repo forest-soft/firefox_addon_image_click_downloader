@@ -47,5 +47,26 @@
 	},
 	"popup_download_complete": {
 		"message": "ダウンロード完了！"
+	},
+	"option_label_overwrite_click_event_title": {
+		"message": "クリックイベント設定"
+	},
+	"option_label_overwrite_click_event": {
+		"message": "クリックイベントの上書き"
+	},
+	"option_label_overwrite_click_event_remark": {
+		"message": "説明\n説明"
+	},
+	"option_label_overwrite_click_double_click_speed": {
+		"message": "ダブルクリックの速度"
+	},
+	"option_label_overwrite_click_double_click_speed_unit": {
+		"message": "ミリ秒"
+	},
+	"option_label_overwrite_click_event_site_domain": {
+		"message": "クリックイベントを上書きするサイトのドメイン名"
+	},
+	"option_label_overwrite_click_event_site_domain_remark": {
+		"message": "説明\n説明"
 	}
 }

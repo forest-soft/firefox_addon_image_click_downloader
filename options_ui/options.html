@@ -6,9 +6,18 @@
 	</head>
 	<body>
 	<form>
+		<style>
+			.remark_text {
+			}
+			textarea[name=overwrite_click_event_site_domain] {
+				width: 350px;
+				height: 150px;
+			}
+		</style>
+		
 		<h1><span class="option_label_basic_setting_title">@基本設定@</span></h1>
 		<span class="option_label_save_dir_name">@保存ディレクトリ名@</span>：<input type="text" id="save_dir" value=""><br>
-		<pre class="option_label_save_dir_name_remark">@説明文@</pre>
+		<pre class="option_label_save_dir_name_remark remark_text">@説明文@</pre>
 		
 		<br>
 		
@@ -37,6 +46,24 @@
 		<label><input type="radio" name="is_show_thumbnail_by_complete" value="yes"><span class="option_label_yes">@する@</span></label>
 		<label><input type="radio" name="is_show_thumbnail_by_complete" value="no"><span class="option_label_no">@しない@</span></label><br>
 		<pre class="option_label_download_popup_show_thumbnail_remark">@説明文@</pre>
+		
+		<br>
+		
+		<h1><span class="option_label_overwrite_click_event_title">@クリックイベント設定@</span></h1>
+		<span class="option_label_overwrite_click_event">@クリックイベントの上書き@</span>：
+		<label><input type="radio" name="is_overwrite_click_event" value="yes"><span class="option_label_yes">@する@</span></label>
+		<label><input type="radio" name="is_overwrite_click_event" value="no"><span class="option_label_no">@しない@</span></label><br>
+		<pre class="option_label_overwrite_click_event_remark remark_text">@説明文@</pre>
+		
+		<br>
+		
+		<span class="option_label_overwrite_click_double_click_speed">@ダブルクリックの速度@</span>：<input type="text" id="overwrite_click_double_click_speed" value="" size="4" style="text-align: right"><span class="option_label_overwrite_click_double_click_speed_unit">@ミリ秒@</span><br>
+		
+		<br>
+		
+		<span class="option_label_overwrite_click_event_site_domain">@クリックイベントを上書きするサイトのドメイン名@</span><br>
+		<textarea name="overwrite_click_event_site_domain"></textarea><br>
+		<pre class="option_label_overwrite_click_event_site_domain_remark remark_text">@説明文@</pre>
 		
 		<br>
 		
